@@ -19,7 +19,7 @@ const loop = setInterval(() => {
     if (pipePosition <= 120 && pipePosition > 0  && marioPosition < 80) {
         
         pipe.style.animation = 'none';
-        pipe.style.left = `${pipePosition}px`;
+        pipe.style.lef = `${pipePosition}px`;
         
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
@@ -36,4 +36,13 @@ const loop = setInterval(() => {
 
 },10)
 
-document.addEventListener('keydown', jump);
+document.addEventListener('keydown', (event) => {
+  if (
+    event.code === 'KeyW' ||      
+    event.code === 'ArrowUp' ||   
+    event.code === 'Space'        
+  ) {
+    jump();
+  }
+});
+
